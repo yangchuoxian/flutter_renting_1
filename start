@@ -1,0 +1,55 @@
+#!/bin/bash
+
+
+uploadToAliyunOSS() {
+    host="some.host"
+    bucket="piizu"
+    accessKeyID="key"
+    accessKeySecret="secret"
+    osshost=$bucket.$host
+
+    source=$1
+    dest=$2
+    isAPK=$3
+
+    resource="/${bucket}/${dest}"
+    contentType=`file -ib ${source} |awk -F ";" '{print $1}'`
+    if [ "$isAPK" == true ]; then
+        contentType="application/vnd.android.package-archive"
+    fi
+    dateValue="`TZ=GMT env LANG=en_US.UTF-8 date +'%a, %d %b %Y %H:%M:%S GMT'`"
+    stringToSign="PUT\n\n${contentType}\n${dateValue}\n${resource}"
+    signature=`echo -en $stringToSign | openssl sha1 -hmac ${accessKeySecret} -binary | base64`
+
+    url=http://${osshost}/${dest}
+    echo "upload ${source} to ${url}"
+
+    curl -i -q -X PUT -T "${source}" \
+        -H "Host: ${osshost}" \
+        -H "Date: ${dateValue}" \
+        -H "Content-Type: ${contentType}" \
+        -H "Authorization: OSS ${accessKeyID}:${signature}" \
+        {$url}
+}
+
+if [ "$1" = "-g" ]; then
+    # install dependencies
+    flutter packages get
+elif [ "$1" = "-s" ]; then
+    # generate *.g.dart file(s) for mobx store(s)
+    flutter packages pub run build_runner build
+elif [ "$1" = "-w" ]; then
+    # stay on watch for mobx store(s) and generate *.g.dart file(s) whenever the store(s) source code changed
+    flutter packages pub run build_runner watch
+elif [ "$1" = "-t" ]; then
+    # run all tests
+    flutter test
+elif [ "$1" = "-deploy" ]; then
+    flutter build apk
+    uploadToAliyunOSS "./build/app/outputs/flutter-apk/app-release.apk" "publish/onezu.apk" true
+
+    flutter build ios --release
+    xcodebuild -workspace ios/Runner.xcworkspace -scheme Runner -sdk iphoneos -configuration AdHoc PROVISIONING_PROFILE="./ios/certs/onezu_adhoc.mobileprovision" archive -archivePath $PWD/build/ios/Runner.xcarchive
+    xcodebuild -exportArchive -archivePath $PWD/build/ios/Runner.xcarchive -exportOptionsPlist ios/certs/exportOptionsAdHoc.plist -exportPath $PWD/build/ios/onezu_release
+    uploadToAliyunOSS "./build/ios/onezu_release/flutter_renting.ipa" "publish/onezu.ipa" false
+fi

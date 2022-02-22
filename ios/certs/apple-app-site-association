@@ -1,0 +1,11 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "KKUX7P89SC.com.onezu.rentingEverything",
+                "paths": ["ulink/*"]
+            }
+        ]
+    }
+}

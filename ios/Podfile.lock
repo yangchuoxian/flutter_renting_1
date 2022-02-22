@@ -1,0 +1,126 @@
+PODS:
+  - AlipaySDK-iOS (15.7.9)
+  - BaiduMapKit (5.4.0)
+  - barcode_scan (0.0.1):
+    - Flutter
+    - MTBBarcodeScanner
+    - SwiftProtobuf
+  - Flutter (1.0.0)
+  - flutter_bmfbase (0.0.1):
+    - BaiduMapKit (= 5.4.0)
+    - Flutter
+  - flutter_bmfmap (1.0.0):
+    - BaiduMapKit (= 5.4.0)
+    - Flutter
+  - flutter_bmfutils (0.0.1):
+    - BaiduMapKit (= 5.4.0)
+    - Flutter
+  - fluwx (0.0.1):
+    - Flutter
+    - WechatOpenSDK (= 1.8.7.1)
+  - image_picker (0.0.1):
+    - Flutter
+  - janalytics (0.0.1):
+    - Flutter
+    - JAnalytics
+  - JAnalytics (2.1.2):
+    - JCore (< 3.0.0, >= 1.2.0)
+  - JCore (2.3.6)
+  - JPush (3.3.6):
+    - JCore (< 3.0.0, >= 2.0.0)
+  - jpush_flutter (0.0.2):
+    - Flutter
+    - JPush
+  - MTBBarcodeScanner (5.0.11)
+  - shared_preferences (0.0.1):
+    - Flutter
+  - SwiftProtobuf (1.12.0)
+  - tobias (0.0.1):
+    - AlipaySDK-iOS (~> 15.7.9)
+    - Flutter
+  - url_launcher (0.0.1):
+    - Flutter
+  - webview_flutter (0.0.1):
+    - Flutter
+  - WechatOpenSDK (1.8.7.1)
+
+DEPENDENCIES:
+  - barcode_scan (from `.symlinks/plugins/barcode_scan/ios`)
+  - Flutter (from `Flutter`)
+  - flutter_bmfbase (from `.symlinks/plugins/flutter_bmfbase/ios`)
+  - flutter_bmfmap (from `.symlinks/plugins/flutter_bmfmap/ios`)
+  - flutter_bmfutils (from `.symlinks/plugins/flutter_bmfutils/ios`)
+  - fluwx (from `.symlinks/plugins/fluwx/ios`)
+  - image_picker (from `.symlinks/plugins/image_picker/ios`)
+  - janalytics (from `.symlinks/plugins/janalytics/ios`)
+  - jpush_flutter (from `.symlinks/plugins/jpush_flutter/ios`)
+  - shared_preferences (from `.symlinks/plugins/shared_preferences/ios`)
+  - tobias (from `.symlinks/plugins/tobias/ios`)
+  - url_launcher (from `.symlinks/plugins/url_launcher/ios`)
+  - webview_flutter (from `.symlinks/plugins/webview_flutter/ios`)
+
+SPEC REPOS:
+  trunk:
+    - AlipaySDK-iOS
+    - BaiduMapKit
+    - JAnalytics
+    - JCore
+    - JPush
+    - MTBBarcodeScanner
+    - SwiftProtobuf
+    - WechatOpenSDK
+
+EXTERNAL SOURCES:
+  barcode_scan:
+    :path: ".symlinks/plugins/barcode_scan/ios"
+  Flutter:
+    :path: Flutter
+  flutter_bmfbase:
+    :path: ".symlinks/plugins/flutter_bmfbase/ios"
+  flutter_bmfmap:
+    :path: ".symlinks/plugins/flutter_bmfmap/ios"
+  flutter_bmfutils:
+    :path: ".symlinks/plugins/flutter_bmfutils/ios"
+  fluwx:
+    :path: ".symlinks/plugins/fluwx/ios"
+  image_picker:
+    :path: ".symlinks/plugins/image_picker/ios"
+  janalytics:
+    :path: ".symlinks/plugins/janalytics/ios"
+  jpush_flutter:
+    :path: ".symlinks/plugins/jpush_flutter/ios"
+  shared_preferences:
+    :path: ".symlinks/plugins/shared_preferences/ios"
+  tobias:
+    :path: ".symlinks/plugins/tobias/ios"
+  url_launcher:
+    :path: ".symlinks/plugins/url_launcher/ios"
+  webview_flutter:
+    :path: ".symlinks/plugins/webview_flutter/ios"
+
+SPEC CHECKSUMS:
+  AlipaySDK-iOS: 94ff4c0e17c5e7d126b8207596d5033006534c25
+  BaiduMapKit: 40a4382633859bd569d40da9f9a2e98a277dd28b
+  barcode_scan: a5c27959edfafaa0c771905bad0b29d6d39e4479
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  flutter_bmfbase: 8ac2c94f3f110daec8e499dc13f8a983b0c8ee40
+  flutter_bmfmap: 57030919b16b5353649fbea77b6143129f7a4ff1
+  flutter_bmfutils: 41b6af33c5e7d5d5f841ef9087fbd271c05b1961
+  fluwx: 07a55ed66bf3a4961e836a2a411b02dcada32902
+  image_picker: 9c3312491f862b28d21ecd8fdf0ee14e601b3f09
+  JAnalytics: 46c696f8ebbe486f871cebd31047e00b299be6ba
+  janalytics: 7d0b5205a066d542772d544ce560e4490caaf510
+  JCore: 06a5c80c176c5e46e8698eec3c780e1abb0bf180
+  JPush: a401b946dcc76b37335422487201bc1ecc8dd296
+  jpush_flutter: 69133df35eaf9135e540549b154d992c44f8ee44
+  MTBBarcodeScanner: f453b33c4b7dfe545d8c6484ed744d55671788cb
+  shared_preferences: af6bfa751691cdc24be3045c43ec037377ada40d
+  SwiftProtobuf: 4ef85479c18ca85b5482b343df9c319c62bda699
+  tobias: 6872e2198dc30e17c10513b9ee114e28d099bc70
+  url_launcher: 6fef411d543ceb26efce54b05a0a40bfd74cbbef
+  webview_flutter: d2b4d6c66968ad042ad94cbb791f5b72b4678a96
+  WechatOpenSDK: 6a4d1436c15b3b5fe2a0bd383f3046010186da44
+
+PODFILE CHECKSUM: c828106a054d27aae8b2872e20bfd100c5f77425
+
+COCOAPODS: 1.10.0
